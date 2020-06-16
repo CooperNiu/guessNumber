@@ -64,4 +64,15 @@ public class GameTest {
 
         assertEquals(result, "1A2B");
     }
+
+    @Test
+    public void should_return_4A0B_given_4321(){
+        String[] actualAnswer = {"1", "2", "3", "4" };
+        String[] inputAnswer = {"4", "3", "2", "1"};
+        Game game = new Game(actualAnswer);
+
+        String result = game.guess(inputAnswer);
+
+        assertEquals(result, "0A4B");
+    }
 }

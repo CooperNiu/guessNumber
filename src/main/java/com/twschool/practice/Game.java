@@ -17,7 +17,17 @@ public class Game {
         setGameAns(gameAns);
     }
 
+    private boolean handleInput(String[] input){
+        if (input.length != 4){
+            return false;
+        }
+        return true;
+    }
+
     public String guess(String[] userAns) {
+        if (!handleInput(userAns)){
+            return "Invalid input, please input again";
+        }
         for (int i = 0; i < userAns.length; i++) {
             for (int j = 0; j < gameAns.length; j++) {
                 if (userAns[j].equals(gameAns[i])) {

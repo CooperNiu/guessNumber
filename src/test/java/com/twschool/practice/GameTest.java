@@ -32,7 +32,7 @@ public class GameTest {
 
     //    有对与错
     @Test
-    public void should_return_0A1B_when_2789() {
+    public void should_return_0A1B_given_2789() {
         String[] actualAswer = {"1", "2", "3", "4"};
         String[] inputAnswer = {"2", "7", "8", "9"};
         Game game = new Game(actualAswer);
@@ -40,5 +40,17 @@ public class GameTest {
         String result = game.guess(inputAnswer);
 
         assertEquals(result, "0A1B");
+    }
+
+
+    @Test
+    public void should_return_1A0B_given_1789(){
+        String[] actualAswer = {"1", "2", "3", "4" };
+        String[] inputAnswer = {"1", "7", "8", "9"};
+        Game game = new Game(actualAswer);
+
+        String result = game.guess(inputAnswer);
+
+        assertEquals(result, "1A0B");
     }
 }
